@@ -2,7 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      md: "968px",
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwindcss-no-scrollbar")],
 };
