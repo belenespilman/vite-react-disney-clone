@@ -1,9 +1,6 @@
 #root {
-  max-width: 1280px;
-  background-color: #131520;
-
-  
-  
+  width: 100vw;
+  background-color: #131520;  
 }
 
 .logo {
