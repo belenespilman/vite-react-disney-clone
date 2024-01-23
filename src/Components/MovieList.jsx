@@ -1,22 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useRef, useEffect } from 'react'
-import GlobalApi from '../Services/GlobalApi'
+import { useRef } from 'react'
 import MovieCard from './MovieCard'
 import { IoIosArrowBack } from 'react-icons/io'
 import { IoIosArrowForward } from 'react-icons/io'
 import HrMovieCard from './HrMovieCard'
 
-function MovieList({ genreId, index_ }) {
-  const [movieList, setMovieList] = useState([])
+function MovieList({ movieList, index_ }) {
   const elementRef = useRef(null)
-  useEffect(() => {
-    getMovieByGenreId()
-  }, [])
 
-  const getMovieByGenreId = async () => {
-    const res = await GlobalApi.getMovieByGenreId(genreId)
-    setMovieList(res.data.results)
-  }
   const slideRight = (element) => {
     element.scrollLeft += 500
   }

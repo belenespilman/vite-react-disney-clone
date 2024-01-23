@@ -1,15 +1,14 @@
-import GenresList from '../Constant/GenresList'
 import MovieList from './MovieList'
 
-function GenreMovieList() {
+function GenreMovieList({ genreMovieList }) {
   return (
     <div className="w-screen">
-      {GenresList.genere.map(
+      {genreMovieList.map(
         (item, index) =>
           index <= 4 && (
             <div className="p-8 px-8 md:px-16" key={index}>
               <h2 className="text-[20px] text-white font-bold">{item.name}</h2>
-              <MovieList genreId={item.id} index_={index} />
+              <MovieList movieList={item.movieList} index_={index} />
             </div>
           ),
       )}

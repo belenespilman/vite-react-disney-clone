@@ -1,6 +1,4 @@
 import { useRef } from 'react'
-import { useEffect, useState } from 'react'
-import GlobalApi from '../Services/GlobalApi'
 import { IoIosArrowBack } from 'react-icons/io'
 import { IoIosArrowForward } from 'react-icons/io'
 
@@ -8,19 +6,8 @@ const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original'
 
 const screenWidth = window.innerWidth
 
-function Slider() {
-  const [movieList, setMovieList] = useState([])
+function Slider({ movieList }) {
   const elementRef = useRef()
-
-  useEffect(() => {
-    getTrendingMovies()
-  }, [])
-
-  const getTrendingMovies = () => {
-    GlobalApi.getTrendingVideos.then((res) => {
-      setMovieList(res.data.results)
-    })
-  }
 
   const sliderRight = (element) => {
     element.scrollLeft += screenWidth - 110
