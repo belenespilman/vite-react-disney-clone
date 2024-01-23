@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      md: "968px",
+      md: '968px',
     },
     extend: {},
   },
-  plugins: [require("tailwindcss-no-scrollbar")],
-};
+  //eslint-disable-next-line
+  plugins: [require('tailwindcss-no-scrollbar')],
+}
